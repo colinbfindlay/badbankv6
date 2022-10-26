@@ -1,7 +1,8 @@
 const MongoClient = require('mongodb').MongoClient;
-const url         = 'mongodb://localhost:27017';
 let db            = null;
-
+const dotenv = require('dotenv');
+dotenv.config();
+const url = process.env.DATABASE_URL;
 
 // connect to mongo
 MongoClient.connect(url, {useUnifiedTopology: true}, function(err, client) {
