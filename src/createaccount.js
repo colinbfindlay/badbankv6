@@ -48,7 +48,8 @@ export default function CreateAccount() {
         setShow(false);
         formik.resetForm();
         ctx.users.push({id: uuidv4(), name: values.name, email: values.email, password: values.password, balance:100})
-        const url = `http://localhost:3001/account/create/${values.name}/${values.email}/${values.password}`;
+        //const url = `http://localhost:3001/account/create/${values.name}/${values.email}/${values.password}`;
+        const url = `/account/create/${values.name}/${values.email}/${values.password}`;
         (async () => {
           var res = await fetch (url);
           var data = await res.json();

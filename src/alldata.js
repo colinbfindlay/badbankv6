@@ -38,7 +38,8 @@ export default function AllData() {
   const [data, setData] = React.useState('');
 
   React.useEffect(() => {
-    fetch('http://localhost:3001/account/all')
+    //fetch('http://localhost:3001/account/all')
+    fetch('/account/all')
       .then(response => response.json())
       .then(data => {
         console.log(data);
